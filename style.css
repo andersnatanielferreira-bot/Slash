@@ -1,0 +1,346 @@
+:root {
+    --electric-blue: #00f0ff;
+    --deep-purple: #4a00e0;
+    --dark-bg: #0a0518;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-pure: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: var(--dark-bg);
+    color: var(--text-pure);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Typography */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+.accent {
+    background: linear-gradient(90deg, var(--electric-blue), #b000ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+h2 span {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--electric-blue);
+}
+h3 {
+    font-size: 1.5rem;
+    color: var(--electric-blue);
+    margin-bottom: 0.5rem;
+}
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+}
+.subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+}
+
+/* Glassmorphism */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+}
+.glass-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2rem;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid var(--glass-border);
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.credit {
+    font-size: 0.8rem;
+    font-weight: 300;
+    opacity: 0.7;
+    margin-left: 10px;
+    background: var(--electric-blue);
+    padding: 2px 8px;
+    border-radius: 12px;
+    color: #000;
+}
+
+/* Buttons */
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-primary {
+    background: linear-gradient(90deg, var(--deep-purple), var(--electric-blue));
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 240, 255, 0.2);
+}
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0, 240, 255, 0.4);
+}
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid var(--electric-blue);
+}
+.btn-secondary:hover {
+    background: rgba(0, 240, 255, 0.1);
+    transform: translateY(-3px);
+}
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+    font-weight: 800;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+}
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Background Geometry */
+#geometric-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.6;
+    transition: transform 0.2s ease-out;
+}
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--deep-purple);
+    top: -100px;
+    left: -100px;
+}
+.shape-2 {
+    width: 500px;
+    height: 500px;
+    background: #b000ff;
+    bottom: -200px;
+    right: -100px;
+}
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--electric-blue);
+    top: 40%;
+    left: 60%;
+}
+
+/* Sections Transitions */
+.transition-section {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.transition-section.active {
+    position: relative;
+    top: 120px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+.transition-section.prev {
+    transform: translateX(-100%);
+}
+
+.hero {
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Products */
+.products {
+    padding-bottom: 4rem;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.product-card {
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+    transition: transform 0.3s;
+}
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+/* 3D Phone Models with Generated Images */
+.phone-3d-wrapper {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    transform-style: preserve-3d;
+}
+.phone-img-model {
+    width: auto;
+    height: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.product-card:hover .phone-img-model {
+    transform: rotateY(360deg) rotateX(10deg) scale(1.1);
+}
+
+/* Specs Popup Chat Window */
+.specs-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 90%;
+    padding: 1.5rem;
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 20;
+    pointer-events: none;
+}
+.product-card.show-specs .specs-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+.product-card.show-specs .phone-img-model {
+    opacity: 0.3;
+}
+.spec-msg {
+    background: rgba(0,0,0,0.5);
+    padding: 0.8rem;
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    border-left: 3px solid var(--electric-blue);
+    transform: translateX(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.product-card.show-specs .spec-msg:nth-child(1) { transition-delay: 0.1s; transform: translateX(0); opacity: 1; }
+.product-card.show-specs .spec-msg:nth-child(2) { transition-delay: 0.2s; transform: translateX(0); opacity: 1; }
+.product-card.show-specs .spec-msg:nth-child(3) { transition-delay: 0.3s; transform: translateX(0); opacity: 1; }
+
+.back-nav {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/* Differentials */
+.differentials {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    top: 50px;
+    position: relative;
+    z-index: 10;
+}
+.diff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Footer & Floating CTA */
+footer {
+    padding: 3rem 5%;
+    text-align: center;
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid var(--glass-border);
+}
+.floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .cta-group { flex-direction: column; }
+    .transition-section.active { top: 100px; }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slash Mobile - Tecnologia ao teu alcance!</title>
+    <meta name="description" content="Na Slash Mobile, temos os aparelhos perfeitos para ti. Bateria, câmera e excelente preço!">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Geometric Background -->
+    <div id="geometric-bg">
+        <div class="blob shape-1"></div>
+        <div class="blob shape-2"></div>
+        <div class="blob shape-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="logo">Slash Mobile <span class="credit">feito por Anderson</span></div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero transition-section active">
+            <h1>A procura acabou.<br><span class="accent">O teu novo smartphone já chegou!</span></h1>
+            <p class="subtitle">Não te irrites mais com esse telefone antigo que trava sempre. Na Slash Mobile, temos os aparelhos que acompanham o teu ritmo, com bateria para navegares o dia todo e câmara para brilhares nas redes.</p>
+            <div class="cta-group">
+                <button class="btn btn-primary" onclick="slideNext()">Manda vir já</button>
+                <button class="btn btn-secondary" onclick="slideNext()">Quero ver os detalhes</button>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="products transition-section">
+            <div class="product-grid">
+                
+                <!-- Gama Alta -->
+                <div class="product-card glass-card" onclick="togglePopup(this)">
+                    <div class="phone-3d-wrapper">
+                        <!-- Removed pure CSS box, added img placeholder (to be replaced or styled) -->
+                        <img src="./assets/phone_alta.png" alt="Telefone Gama Alta" class="phone-img-model">
+                    </div>
+                    <h2>Os Maiores<br><span>(Gama Alta)</span></h2>
+                    <p>Para quem gosta de estar no topo. Performance rápida e fotos profissionais. É para quem quer o seu dinheiro bem investido.</p>
+                    <div class="specs-popup glass">
+                        <div class="spec-msg"><strong>Bateria:</strong> 5000mAh (Não te deixa mal)</div>
+                        <div class="spec-msg"><strong>Memória:</strong> 256GB (Guarda tudo do bom)</div>
+                        <div class="spec-msg"><strong>Ecrã:</strong> OLED 120Hz (Sempre super fluido)</div>
+                    </div>
+                </div>
+
+                <!-- Gama Média -->
+                <div class="product-card glass-card" onclick="togglePopup(this)">
+                    <div class="phone-3d-wrapper">
+                        <img src="./assets/phone_media.png" alt="Telefone Gama Média" class="phone-img-model">
+                    </div>
+                    <h2>Equilíbrio Total<br><span>(Gama Média)</span></h2>
+                    <p>O telefone que não te deixa na mão. Bom, elegante e com um preço que o teu bolso agradece. Ideal para o corre-corre do dia-a-dia.</p>
+                    <div class="specs-popup glass">
+                        <div class="spec-msg"><strong>Bateria:</strong> 4500mAh (Tranquilo o dia todo)</div>
+                        <div class="spec-msg"><strong>Memória:</strong> 128GB (Espaço garantido)</div>
+                        <div class="spec-msg"><strong>Ecrã:</strong> AMOLED (Cores Vivas)</div>
+                    </div>
+                </div>
+
+                <!-- Baterias Potentes -->
+                <div class="product-card glass-card" onclick="togglePopup(this)">
+                    <div class="phone-3d-wrapper">
+                        <img src="./assets/phone_bateria.png" alt="Baterias Potentes" class="phone-img-model">
+                    </div>
+                    <h2>Não morre cedo<br><span>(Baterias Potentes)</span></h2>
+                    <p>Cansado de procurar ficha em todo o lado? Estes aqui são os reis da autonomia. Aguentam de manhã até à noite sem reclamar.</p>
+                    <div class="specs-popup glass">
+                        <div class="spec-msg"><strong>Bateria:</strong> 6000mAh (Rei da autonomia)</div>
+                        <div class="spec-msg"><strong>Memória:</strong> 64GB (Essencial garantido)</div>
+                        <div class="spec-msg"><strong>Ecrã:</strong> HD+ (Poupando energia)</div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="back-nav">
+                <button class="btn btn-secondary" onclick="slidePrev()">Voltar ao Início</button>
+            </div>
+        </section>
+
+        <!-- Differentials -->
+        <section class="differentials glass-card">
+            <div class="diff-grid">
+                <div class="diff-item">
+                    <h3>Garantia Real</h3>
+                    <p>Aqui não há brincadeira. Se o telefone der problema, nós resolvemos e trocamos por ti.</p>
+                </div>
+                <div class="diff-item">
+                    <h3>Preço Justo</h3>
+                    <p>A melhor relação entre o que pagas e a tecnologia que recebes. Preços transparentes.</p>
+                </div>
+                <div class="diff-item">
+                    <h3>Suporte Rápido</h3>
+                    <p>Tens dúvida sobre qual escolher? Manda uma mensagem no nosso chat que nós orientamos-te.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="floating-whatsapp">
+        <button class="btn btn-whatsapp glass-card">💬 Falar com o suporte</button>
+    </div>
+
+    <footer class="glass">
+        <p>Entrega rápida em toda Luanda e províncias. Aqui não há voltas, o telefone chega nas tuas mãos e começas logo a aproveitar.</p>
+        <p>Aceitamos pagamentos por transferência ou no acto da entrega para tua segurança total.</p>
+        <div class="social-links" style="margin: 20px 0;">
+            <a href="https://www.instagram.com/sloney8/" target="_blank" rel="noopener noreferrer" style="color: var(--electric-blue); text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;">📸 Segue-nos no Instagram (@sloney8)</a>
+        </div>
+        <p class="copyright">&copy; 2026 Slash Mobile feito por Anderson. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
